@@ -9,7 +9,7 @@ def do_pack():
     """Create the folder and the tgz"""
     try:
         with hide('running'):
-            local("mkdir versions")
+            local("mkdir -p ./versions")
 
         date = datetime.now()
         all_date = date.strftime("%Y%m%d%H%M%S")
