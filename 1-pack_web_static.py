@@ -5,6 +5,7 @@ file with the local command execution with fabric"""
 from datetime import datetime
 from fabric.api import local, hide
 
+
 def do_pack():
     """Create the folder and the tgz"""
     try:
@@ -12,10 +13,10 @@ def do_pack():
             local("mkdir -p ./versions")
 
         date = datetime.now()
-        all_date = date.strftime("%Y%m%d%H%M%S")
+        adt = date.strftime("%Y%m%d%H%M%S")
 
-        command = "tar -cvzf versions/web_static_{}.tgz web_static".format(all_date)
-        path = "versions/web_static_{}.tgz".format(all_date)
+        command = "tar -cvzf versions/web_static_{}.tgz web_static".format(adt)
+        path = "versions/web_static_{}.tgz".format(adt)
         message = "Packing web_static to {}".format(path)
 
         print(message)
