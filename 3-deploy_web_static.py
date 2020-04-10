@@ -8,6 +8,7 @@ import os
 
 env.hosts = ['35.237.103.2', '18.209.63.81']
 
+
 def do_pack():
     """Create the folder and the tgz"""
     try:
@@ -78,6 +79,7 @@ def do_deploy(archive_path):
     except:
 
         return False
+
 
 def deploy():
     """creates and distributes an archive to your web servers"""
