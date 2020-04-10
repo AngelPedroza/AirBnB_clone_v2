@@ -55,7 +55,7 @@ def do_deploy(archive_path):
     tar2 = "/data/web_static/releases/{}/".format(fname)
     f_tar = tar1 + tar2
 
-    mv1 = "sudo mv /data/web_static/releases/{}/web_static/*".format(fname)
+    mv1 = "sudo mv /data/web_static/releases/{}/web_static/* ".format(fname)
     mv2 = "/data/web_static/releases/{}/".format(fname)
     f_mv = mv1 + mv2
 
