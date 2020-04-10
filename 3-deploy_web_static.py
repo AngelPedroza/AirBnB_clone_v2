@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Create a folder if not exists and create a tgz
 file with the local command execution with fabric"""
 
