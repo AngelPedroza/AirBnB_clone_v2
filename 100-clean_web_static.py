@@ -90,6 +90,7 @@ def deploy():
 
     return do_deploy(path)
 
+
 def do_clean(number=0):
     """Clean the old files"""
 
