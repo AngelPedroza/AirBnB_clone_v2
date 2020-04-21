@@ -47,7 +47,6 @@ def states(id=None):
     if id is None:
         flag = 1
 
-
     for state in states:
         if state.id == id:
             id_state = state
