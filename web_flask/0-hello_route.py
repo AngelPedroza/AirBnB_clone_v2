@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from flask import Flask
 """Init the flask service"""
 app = Flask(__name__)
