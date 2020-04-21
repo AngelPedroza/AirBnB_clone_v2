@@ -68,7 +68,7 @@ def states(id=None):
             cities = [city for city in id_state.cities]
 
         cities = sorted(cities, key=lambda k: k.name)
-        return render_template('9-states.html', states=id_state,
+        return render_template('9-states.html', state_id=id_state,
                                cities=cities, flag=flag)
 
     return render_template('9-states.html', flag=flag)
