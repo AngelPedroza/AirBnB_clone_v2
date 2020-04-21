@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from flask import Flask, escape, render_template
 """Return a template"""
 app = Flask(__name__)

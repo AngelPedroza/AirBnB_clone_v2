@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from flask import Flask, escape
 """Accept only a integer"""
 app = Flask(__name__)

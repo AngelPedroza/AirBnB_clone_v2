@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from flask import Flask, escape
 """Test take a variable"""
 app = Flask(__name__)

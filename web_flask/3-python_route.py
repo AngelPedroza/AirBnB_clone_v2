@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from flask import Flask, escape
 """Put a default value in a varible"""
 app = Flask(__name__)
