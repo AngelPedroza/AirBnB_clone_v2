@@ -5,7 +5,8 @@ from models.city import City
 import os
 """Test take a variable"""
 app = Flask(__name__)
-app.url_map.strict_slashes=False
+app.url_map.strict_slashes = False
+
 
 @app.route('/states_list')
 def state_list():
@@ -13,6 +14,7 @@ def state_list():
     list_states = [value for key, value in storage.all(State).items()]
     list_states = sorted(list_states, key=lambda k: k.name)
     return render_template('7-states_list.html', states=list_states)
+
 
 @app.route('/cities_by_states')
 def cities_by_states():
@@ -28,6 +30,7 @@ def cities_by_states():
     cities = sorted(cities, key=lambda k: k.name)
     return render_template('8-cities_by_states.html', states=states,
                            cities=cities)
+
 
 @app.route('/states')
 @app.route('/states/<id>')
@@ -46,11 +49,11 @@ def states(id=None):
             flag = True
             break
 
-    if id == None:
+    if id is None:
 
         return render_template('9-states.html', states_nid=states)
 
-    elif flag == True:
+    elif flag is True:
 
         if os.getenv('HBNB_TYPE_STORAGE') == "db" and id_state:
             citys = storage.all(City).values()
