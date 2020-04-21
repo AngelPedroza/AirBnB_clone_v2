@@ -42,19 +42,23 @@ def states(id=None):
     states = storage.all(State).values()
     states = sorted(states, key=lambda k: k.name)
 
-    flag = False
+    flag = 0
+
+    if id is None:
+        flag = 1
+
 
     for state in states:
         if state.id == id:
             id_state = state
-            flag = True
+            flag = 2
             break
 
-    if id is None:
+    if flag == 1:
 
-        return render_template('9-states.html', states_nid=states)
+        return render_template('9-states.html', states=states, flag=flag)
 
-    elif flag is True:
+    elif flag == 2:
 
         if os.getenv('HBNB_TYPE_STORAGE') == "db" and id_state:
             citys = storage.all(City).values()
@@ -64,10 +68,10 @@ def states(id=None):
             cities = [city for city in id_state.cities]
 
         cities = sorted(cities, key=lambda k: k.name)
-        return render_template('9-states.html', state_id=id_state,
-                               cities=cities)
+        return render_template('9-states.html', states=id_state,
+                               cities=cities, flag=flag)
 
-    return render_template('9-states.html')
+    return render_template('9-states.html', flag=flag)
 
 
 @app.teardown_appcontext

@@ -4,14 +4,14 @@
         <TITLE>HBNB</TITLE>
     </HEAD>
     <BODY>
-      {% if states_nid %}
+      {% if flag == 1 %}
       <H1>States</H1>
       <UL>
 	{% for state in states_nid %}
         <LI>{{state.id}}: <B>{{state.name}}</B></LI>
 	{% endfor %}
       </UL>
-      {% elif state_id %}
+      {% elif flag == 2 %}
       <H1>State: {{state_id.name}}</H1>
       <H3>Cities:</H3>
       <UL>
